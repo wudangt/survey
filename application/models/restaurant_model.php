@@ -10,11 +10,17 @@ class Restaurant_model extends CI_Model {
     }
 
     function query_comment() {
-        $q = $this->db->select('comment')        //select('id,name,sex,age,email')
-             ->from('pos_comments')
-             ->where('type', 1);
-
-        $ret['comments'] = $q->get()->result();
+        $query = "SELECT `comment`, fankui,hangshu, date, color, size, height, weight, reviewer
+                  FROM pos_comments
+                  WHERE type = 1 and hangshu not in (2,6)
+                  UNION
+                  SELECT `comment`, fankui, hangshu, date, color, size, height, weight, reviewer
+                  FROM
+                  restaurant_negative
+                  WHERE zubie%105 = $this->uid
+                  ORDER BY hangshu ASC ;";
+        $q = $this->db->query($query);
+        $ret['comments'] = $q->result();
 
         return $ret;
     }
