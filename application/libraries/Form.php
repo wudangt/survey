@@ -251,7 +251,7 @@ class El {
 						}
 						else
 						{
-							$new = $old.'|'.$value;
+							$new = $old;//$old.'|'.$value;
 						}
 						
 						if ($last_pass)

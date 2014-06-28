@@ -58,27 +58,40 @@ class Welcome extends CI_Controller {
 
 		// if the form is submitted to the same url this can be omitted
 		->open('welcome')
-
-            ->radiogroup('gender', $radios_sex, '1. 请问您的性别？', '', 'required')
+            ->label('1. 请问您的性别？')
+            ->br()
+            ->radiogroup('gender', $radios_sex, '', '', 'required')
             // add a double break with 'clear: both' after the floating radio buttons
             ->space(TRUE)
 
-            ->radiogroup('age', $radios_age, '2. 请问您的年龄？', '', 'required')
+            ->label('2. 请问您的年龄？')
+            ->br()
+            ->radiogroup('age', $radios_age, '', '', 'required')
             ->space(TRUE)
 
-            ->radiogroup('shop_exp', $radios_shop_exp, '3. 请问您有多久的网络购物经验？', '', 'required')
+            ->label('3. 请问您有多久的网络购物经验？')
+            ->br()
+            ->radiogroup('shop_exp', $radios_shop_exp, '', '', 'required')
             ->space(TRUE)
 
-            ->radiogroup('degree', $radios_degree, '4. 您的学历？', '', 'required')
+            ->label('4. 您的学历？')
+            ->br()
+            ->radiogroup('degree', $radios_degree, '', '', 'required')
             ->space(TRUE)
 
-            ->radiogroup('shop_freq', $radios_shop_freq, '5. 您目前每月大概平均进行几次网络购物？', '', 'required')
+            ->label('5. 您目前每月大概平均进行几次网络购物？')
+            ->br()
+            ->radiogroup('shop_freq', $radios_shop_freq, '', '', 'required')
             ->space(TRUE)
 
-            ->radiogroup('shop_cost', $radios_shop_cost, '6. 您每月网络购物的花费为？', '', 'required')
+            ->label('6. 您每月网络购物的花费为？')
+            ->br()
+            ->radiogroup('shop_cost', $radios_shop_cost, '', '', 'required')
             ->space(TRUE)
 
-            ->radiogroup('month_cost', $radios_month_cost, '7. 请问您的月支出是多少？', '', 'required')
+            ->label('7. 请问您的月支出是多少？')
+            ->br()
+            ->radiogroup('month_cost', $radios_month_cost, '', '', 'required')
             ->space(TRUE)
 
             ->indent(150)

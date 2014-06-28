@@ -74,8 +74,8 @@
         display: inline;
         float: left;
 
-        width: 230px;
-        width: "230px";
+        width: 400px;
+        width: "400px";
         padding-right: 10px;
 
         vertical-align: middle;

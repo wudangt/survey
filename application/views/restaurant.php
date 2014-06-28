@@ -98,7 +98,7 @@
         width: 480px;
         width: "480px";
         padding-right: 10px;
-
+        font-weight: normal;
         vertical-align: middle;
     }
     label.required {
@@ -185,7 +185,7 @@
 
     <h1>第二部分：您对服装评论的感知的相关调查</h1>
     <div id="body">
-        <p>请您基于网页中的商品描述及评论填写以下问卷。（1—5分别代表非常不认同、不认同、一般、认同和非常认同）</p>
+        <p>请您基于网页中的商品描述及评论填写以下问卷。（1—7分别代表非常不认同、不认同、有一点不认同、一般、有一点认同、认同和非常认同）</p>
     </div>
 
     <div id="wrapper">
