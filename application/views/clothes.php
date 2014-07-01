@@ -75,8 +75,8 @@
             margin: 20px 0 0 0;
         }
 
-        #container{
-            margin: 10px;
+        #content-head{
+            padding: 10px;
             border: 1px solid #D0D0D0;
             -webkit-box-shadow: 0 0 8px #D0D0D0;
         }
@@ -106,79 +106,97 @@
 
 <body>
 <div id="container">
-	<h1>服装购物调查</h1>
-
-    <div class="clearfix">
-        <div style="width: 500px; float:left; display:inline; padding:10px;">
-            <h4>皇家厨房门和橱柜</h4>
-            <address>
-                <em>333绿道，Stoney小河 ON L8E 2B1</em>
-            </address>
-            成立于2003年，御厨门及橱柜具备的，被取悦客户与美丽的新的自定义厨房，浴室柜，面盆和岛屿。我们的厨房是由我们的有才华的设计师设计的房子。我们可以设计一个厨房遵循任何空间。所有的皇家厨房门及橱柜的是定制你的自制，并遵循为您提供多年的享受负担得起的价格。我们非常自豪，我们以卓越的品质和对细节的关注。我们提供全面的设计，建造和安装服务。皇家厨房门及橱柜客户使用实木门，以及其他优质材料，你的空间如下。我们的客户的口碑构成了我们业务的大部分，我们邀请到来电垂询或亲临找出原因。你的梦想厨房或虚荣心比你想象的比更实惠。我们所服务的汉密尔顿，登打士，格里姆斯比，伯灵顿和奥克维尔地区。
-        </div>
-
-        <div style="float:left; display:inline">
-            <img src=<?=base_url()?>resource/skirt.png>
-        </div>
-    </div>
-    <div style="width:500px; float:left;">
-    	<div id="wrapper">
-    		<div id="content">
-                <h4>用户评论</h4>
-    <!--        <table class="table table-striped table-hover">-->
-    <!--            <thead>-->
-    <!--                <th>累计评论</th>-->
-    <!--            </thead>-->
-    <!--            --><?php
-    //            //print_r($comments);
-    //            foreach($comments as $item):?>
-    <!--            <tr>-->
-    <!--                <td>--><?php //echo "用户评论：".$item->comment; ?>
-    <!--                --><?php //if($item->fankui != null) { ?>
-    <!--                    <div style="color: #0000FF">-->
-    <!--                        --><?php //echo "卖家反馈：".$item->fankui; ?>
-    <!--                    </div>-->
-    <!--                </td>-->
-    <!--            </tr>-->
-    <!--            --><?php //} ?>
-    <!--            --><?php //endforeach; ?>
-    <!--        </table>-->
-
-                <div class="rate-grid" style="width:auto;">
-                    <table class="table table-striped table-hover" style="width:auto;">
-                        <tbody>
-
-                        <?php foreach($comments as $item):?>
-                        <tr>
-                            <td class="tm-col-master" style="vertical-align:middle">
-                                <div class="tm-rate-content"><div class="tm-rate-fulltxt"><?php echo $item->comment; ?></div></div>
-                                <div class="tm-rate-date"><?php echo $item->date; ?></div>
-                                <?php if($item->fankui != null) { ?>
-                                    <div class="tm-rate-reply"><div class="tm-rate-fulltxt"><?php echo "解释：".$item->fankui; ?></div></div>
-                                <?php } ?>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
+    <div id="content-head">
+    	<h1>服装购物调查</h1>
+        <div class="clearfix">
+            <div style="width: 500px; float:left; display:inline; padding:10px;">
+                <h4>熊猫官方旗舰店</h4>
+                <address>
+                    <em>333绿道，Stoney小河 ON L8E 2B1</em>
+                </address>
+                熊猫西服是熊猫集团股份有限公司旗下西服品牌，品牌诞生于1984年，经过多年的发展已经成为国内知名且有国际影响力的男女西装品牌。
+                熊猫西装专门针对学生群体，以时尚与干练为导向为学生群体设计专业的男女生求职面试正装系列。我们汲取欧洲西服的精髓，结合东方人（特别是学生群体）的体型特点，并根据中国市场不同时期的流行风格，精心制作形成了“薄、轻、软、松、挺”的最佳效果。在穿着上，会给他人以正规、大气、典雅、挺括乃至名牌的视觉感，同时穿着者本人也会感受到精神、体面、舒适、自如。
             </div>
-    	</div>
-    </div>
-    <div style="width:400px; float:left;">
-        <h1>第二部分：您对服装评论的感知的相关调查</h1>
-        <div id="body">
-            <p>请您基于网页中的商品描述及评论填写以下问卷。（1—7分别代表非常不认同、不认同、有一点不认同、一般、有一点认同、认同和非常认同）</p>
-        </div>
 
-        <div id="wrapper">
-            <div id="content">
-                <?=$errors?>
-                <?=$form?>
+            <div style="float:left; display:inline">
+                <img src=<?=base_url()?>resource/skirt.png>
+            </div>
+        </div>
+    </div>
+    <div style="position:relative;margin-bottom:20px;">
+        <div id="user-comment" style="width:500px; position:absolute; top:0;">
+        	<div id="wrapper">
+        		<div id="content">
+                    <h4 style="margin-top:0">用户评论</h4>
+        <!--        <table class="table table-striped table-hover">-->
+        <!--            <thead>-->
+        <!--                <th>累计评论</th>-->
+        <!--            </thead>-->
+        <!--            --><?php
+        //            //print_r($comments);
+        //            foreach($comments as $item):?>
+        <!--            <tr>-->
+        <!--                <td>--><?php //echo "用户评论：".$item->comment; ?>
+        <!--                --><?php //if($item->fankui != null) { ?>
+        <!--                    <div style="color: #0000FF">-->
+        <!--                        --><?php //echo "卖家反馈：".$item->fankui; ?>
+        <!--                    </div>-->
+        <!--                </td>-->
+        <!--            </tr>-->
+        <!--            --><?php //} ?>
+        <!--            --><?php //endforeach; ?>
+        <!--        </table>-->
+
+                    <div class="rate-grid" style="width:auto;">
+                        <table class="table table-striped table-hover" style="width:650px;">
+                            <tbody>
+
+                            <?php foreach($comments as $item):?>
+                                <tr>
+                                    <td class="tm-col-master" style="vertical-align:middle">
+                                        <div class="tm-rate-content"><div class="tm-rate-fulltxt"><?php echo $item->comment; ?></div></div>
+                                        <div class="tm-rate-date"><?php echo $item->date; ?></div>
+                                        <?php if($item->fankui != null) { ?>
+                                            <div class="tm-rate-reply"><div class="tm-rate-fulltxt"><?php echo "解释：".$item->fankui; ?></div></div>
+                                        <?php } ?>
+                                    </td>
+                                    <td class="col-author"  style="vertical-align:middle">
+                                        <div class="rate-user-info"><?php echo $item->reviewer; ?></div>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        	</div>
+        </div>
+        <div style="width:600px; margin-left:700px;">
+            <h4>第二部分：您对服装评论的感知的相关调查</h4>
+            <div id="body">
+                <p>请您基于网页中的商品描述及评论填写以下问卷。（1—7分别代表非常不认同、不认同、有一点不认同、一般、有一点认同、认同和非常认同）</p>
+            </div>
+
+            <div id="wrapper">
+                <div id="content">
+                    <?=$errors?>
+                    <?=$form?>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
+<script>
+window.onscroll = function() {
+    var scroll = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+    var offset = document.getElementById('user-comment').offsetTop + 400;
+    var target = document.getElementById('user-comment');
+    if (scroll > offset) {
+        target.style.position = 'fixed';
+    } else {
+        target.style.position = 'absolute';
+    }
+};
+</script>
 </body>
 </html>
