@@ -25,11 +25,11 @@ class Welcome_model extends CI_Model {
 
     function do_stuff(&$form, $data)
     {
-		// do db stuff after the form was submit and validated
-
-		// all validated post values are in $data
-		// e.g. $data['username']
+        // do db stuff after the form was submit and validated
+        // all validated post values are in $data
+        // e.g. $data['username']
         //print_r($data);
+
         $insert_data['uid'] = $this->visitor_count();
 //        if(array_key_exists('gender', $data))
         $insert_data['gender'] = $data['gender'][0];
@@ -49,10 +49,6 @@ class Welcome_model extends CI_Model {
             $this->db->where('uid', $insert_data['uid']);
             $this->db->update('investigator', $insert_data);
         }
-
-
-        // add custom errors to the form by using
-		// $form->add_error('username', 'The Username is not valid');
     }
 }
 

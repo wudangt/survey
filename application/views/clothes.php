@@ -75,7 +75,7 @@
             margin: 20px 0 0 0;
         }
 
-        #content-head{
+        #container{
             padding: 10px;
             border: 1px solid #D0D0D0;
             -webkit-box-shadow: 0 0 8px #D0D0D0;
@@ -90,6 +90,7 @@
                 padding-right: 10px;
                 font-weight: normal;
                 vertical-align: middle;
+                color: blue;
             }
         label.required {
             font-weight: normal;
@@ -97,7 +98,9 @@
         label.check {
             float: left;
             font-weight: normal;
+            color: black;
             width: auto;
+            font-size:12px;
         }
     </style>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -106,75 +109,60 @@
 
 <body>
 <div id="container">
-    <div id="content-head">
+    <div>
     	<h1>服装购物调查</h1>
         <div class="clearfix">
-            <div style="width: 500px; float:left; display:inline; padding:10px;">
+            <div style="width: 600px; float:left; display:inline;  margin-left:10px;">
                 <h4>熊猫官方旗舰店</h4>
                 <address>
                     <em>333绿道，Stoney小河 ON L8E 2B1</em>
                 </address>
-                熊猫西服是熊猫集团股份有限公司旗下西服品牌，品牌诞生于1984年，经过多年的发展已经成为国内知名且有国际影响力的男女西装品牌。
-                熊猫西装专门针对学生群体，以时尚与干练为导向为学生群体设计专业的男女生求职面试正装系列。我们汲取欧洲西服的精髓，结合东方人（特别是学生群体）的体型特点，并根据中国市场不同时期的流行风格，精心制作形成了“薄、轻、软、松、挺”的最佳效果。在穿着上，会给他人以正规、大气、典雅、挺括乃至名牌的视觉感，同时穿着者本人也会感受到精神、体面、舒适、自如。
+
+                <p>熊猫西服是熊猫集团股份有限公司旗下西服品牌，品牌诞生于1984年，经过多年的发展已经成为国内知名且有国际影响力的男女西装品牌。熊猫一直以来靠的是精工细作，靠的是诚实守信，坚持的是不和科学作对，不和时尚作对，坚信品牌靠品质来支撑、靠老百姓的口碑来传播的理念。熊猫将始终以肩负起服装民族的大任，做中国最好的服装为使命。</p>
+                <p>熊猫西装专门针对学生群体，以时尚与干练为导向为学生群体设计专业的男女生求职面试正装系列。我们汲取欧洲西服的精髓，结合东方人（特别是学生群体）的体型特点，并根据中国市场不同时期的流行风格，精心制作形成了“薄、轻、软、松、挺”的最佳效果。在穿着上，会给他人以正规、大气、典雅、挺括乃至名牌的视觉感，同时穿着者本人也会感受到精神、体面、舒适、自如。</p>
             </div>
 
-            <div style="float:left; display:inline">
-                <img src=<?=base_url()?>resource/skirt.png>
+            <div style="float:left; display:inline; margin-left:10px;">
+                <img src=<?=base_url()?>resource/clothe_1.png>
             </div>
         </div>
     </div>
+
     <div style="position:relative;margin-bottom:20px;">
         <div id="user-comment" style="width:500px; position:absolute; top:0;">
+            <h4 style="margin-left:10px;">用户评论</h4>
         	<div id="wrapper">
         		<div id="content">
-                    <h4 style="margin-top:0">用户评论</h4>
-        <!--        <table class="table table-striped table-hover">-->
-        <!--            <thead>-->
-        <!--                <th>累计评论</th>-->
-        <!--            </thead>-->
-        <!--            --><?php
-        //            //print_r($comments);
-        //            foreach($comments as $item):?>
-        <!--            <tr>-->
-        <!--                <td>--><?php //echo "用户评论：".$item->comment; ?>
-        <!--                --><?php //if($item->fankui != null) { ?>
-        <!--                    <div style="color: #0000FF">-->
-        <!--                        --><?php //echo "卖家反馈：".$item->fankui; ?>
-        <!--                    </div>-->
-        <!--                </td>-->
-        <!--            </tr>-->
-        <!--            --><?php //} ?>
-        <!--            --><?php //endforeach; ?>
-        <!--        </table>-->
-
-                    <div class="rate-grid" style="width:auto;">
+                    <div class="rate-grid" style="width:auto;margin-left:10px;">
                         <table class="table table-striped table-hover" style="width:650px;">
                             <tbody>
 
-                            <?php foreach($comments as $item):?>
+                            <?php for($i = 0; $i <= 9; $i++){ $item = $comments[$i];?>
                                 <tr>
-                                    <td class="tm-col-master" style="vertical-align:middle">
+                                    <td class="tm-col-master" style="vertical-align:middle; width:550px;">
                                         <div class="tm-rate-content"><div class="tm-rate-fulltxt"><?php echo $item->comment; ?></div></div>
-                                        <div class="tm-rate-date"><?php echo $item->date; ?></div>
+                                        <div class="tm-rate-date"><?php echo $item->date; if($i == 9) {?>
+                                            <div style="font-weight:bold; color: red;">END</div><?php }?>
+                                         </div>
                                         <?php if($item->fankui != null) { ?>
                                             <div class="tm-rate-reply"><div class="tm-rate-fulltxt"><?php echo "解释：".$item->fankui; ?></div></div>
                                         <?php } ?>
                                     </td>
                                     <td class="col-author"  style="vertical-align:middle">
-                                        <div class="rate-user-info"><?php echo $item->reviewer; ?></div>
+                                        <div><?php echo $item->reviewer; ?></div>
                                     </td>
                                 </tr>
-                            <?php endforeach; ?>
+                            <?php }?>
                             </tbody>
                         </table>
                     </div>
                 </div>
         	</div>
         </div>
-        <div style="width:600px; margin-left:700px;">
-            <h4>第二部分：您对服装评论的感知的相关调查</h4>
+        <div style="width:650px; margin-left:700px;">
+            <h1>第二部分：您对服装评论的感知的相关调查</h1>
             <div id="body">
-                <p>请您基于网页中的商品描述及评论填写以下问卷。（1—7分别代表非常不认同、不认同、有一点不认同、一般、有一点认同、认同和非常认同）</p>
+                <p>请您基于网页中的商品描述及评论填写以下问卷。</p>
             </div>
 
             <div id="wrapper">
@@ -185,6 +173,8 @@
             </div>
         </div>
     </div>
+
+<!--    <p class="footer">Page rendered in <strong>{elapsed_time}--><?php //echo($visitor_count); ?><!--</strong> seconds</p>-->
 </div>
 <script>
 window.onscroll = function() {

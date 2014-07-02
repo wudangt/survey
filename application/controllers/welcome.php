@@ -5,13 +5,13 @@ class Welcome extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		
+
 		// used in the view
 		$this->load->helper('url');
         $this->load->database();
         $this->load->model('welcome_model');
 	}
-	
+
 	public function index()
 	{
 		$this->load->library('form');
@@ -24,7 +24,7 @@ class Welcome extends CI_Controller {
 		$radios_age[] = array('3', '23~25岁');
 		$radios_age[] = array('4', '26~30岁');
 		$radios_age[] = array('5', '>= 31岁');
-		
+
 		$radios_shop_exp[] = array('1', '五年以上');
 		$radios_shop_exp[] = array('2', '三年到五年');
 		$radios_shop_exp[] = array('3', '一年到三年');
@@ -61,37 +61,44 @@ class Welcome extends CI_Controller {
             ->label('1. 请问您的性别？')
             ->br()
             ->radiogroup('gender', $radios_sex, '', '', 'required')
+            ->set_error('gender', '问题1必填。')
             // add a double break with 'clear: both' after the floating radio buttons
             ->space(TRUE)
 
             ->label('2. 请问您的年龄？')
             ->br()
             ->radiogroup('age', $radios_age, '', '', 'required')
+            ->set_error('age', '问题2必填。')
             ->space(TRUE)
 
             ->label('3. 请问您有多久的网络购物经验？')
             ->br()
             ->radiogroup('shop_exp', $radios_shop_exp, '', '', 'required')
+            ->set_error('shop_exp', '问题3必填。')
             ->space(TRUE)
 
             ->label('4. 您的学历？')
             ->br()
             ->radiogroup('degree', $radios_degree, '', '', 'required')
+            ->set_error('degree', '问题4必填。')
             ->space(TRUE)
 
             ->label('5. 您目前每月大概平均进行几次网络购物？')
             ->br()
             ->radiogroup('shop_freq', $radios_shop_freq, '', '', 'required')
+            ->set_error('shop_freq', '问题5必填。')
             ->space(TRUE)
 
             ->label('6. 您每月网络购物的花费为？')
             ->br()
             ->radiogroup('shop_cost', $radios_shop_cost, '', '', 'required')
+            ->set_error('shop_cost', '问题6必填。')
             ->space(TRUE)
 
             ->label('7. 请问您的月支出是多少？')
             ->br()
             ->radiogroup('month_cost', $radios_month_cost, '', '', 'required')
+            ->set_error('month_cost', '问题7必填。')
             ->space(TRUE)
 
             ->indent(150)
@@ -119,6 +126,7 @@ class Welcome extends CI_Controller {
 		}
 		else
 		{
+            // add custom errors to the form by using
 			$data['errors'] = $this->form->errors;
 		}
 
@@ -128,7 +136,7 @@ class Welcome extends CI_Controller {
 
 	function success()
 	{
-		redirect('/clothes/index/'.$this->welcome_model->visitor_count(), 'refresh');
+		redirect('/clothes_state/', 'refresh');
 	}
 }
 

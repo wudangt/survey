@@ -2,6 +2,22 @@
 class Restaurant_model extends CI_Model {
 
     private $uid;
+    private $visit_count;
+
+    function visitor_count() {
+        static $isFirst = true;
+        if($isFirst) {
+            $visit_count = $this->db->count_all_results('restaurant_survey') + 1;
+            $isFirst = false;
+        }
+
+        return $visit_count;
+
+//        $this->db->from('investigator');
+//        $this->db->where('uid', 1);
+//        return $this->db->count_all_results();
+    }
+
     public function setUid($newId) {
         $this->uid = $newId;
     }

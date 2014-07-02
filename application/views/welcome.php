@@ -17,13 +17,13 @@
 	#wrapper {
 		width: 800px;
 		margin: auto;
-		text-align: left;		
+		text-align: left;
 	}
-	
+
 	#content {
 		padding: 40px;
 	}
-	
+
 	a {
 		color: #003399;
 		background-color: transparent;
@@ -54,7 +54,7 @@
 	#body{
 		margin: 0 15px 0 15px;
 	}
-	
+
 	p.footer{
 		text-align: right;
 		font-size: 11px;
@@ -63,7 +63,7 @@
 		padding: 0 10px 0 10px;
 		margin: 20px 0 0 0;
 	}
-	
+
 	#container{
 		margin: 10px;
 		border: 1px solid #D0D0D0;
@@ -93,24 +93,24 @@
 	<h1>尊敬的女士/先生：</h1>
 
 	<div id="body">
-		<p>您好！非常感谢您能参与本次情景实验调查。您是第 <?php echo($visitor_count); ?> 位参与者。</p>
+		<p>您好！非常感谢您能参与本次情景实验调查。</p>
 		<p>请您基于以下几个假设场景，根据自身的想法填写问卷。整个实验采取匿名形式，答案没有对错之分，结果仅用于学术研究。再次感谢您！</p>
-		<p>本研究中关于网络购物的定义是：您通过互联网搜索任何无形或有形的商品并最终购买（例如在网上购买一件衣服、在互联网中搜索一个餐厅的评价并前去就餐）。因此，本研究中关于网络购物的金额为您通过互联网搜索任何无形或有形的商品并最终消费的金额。</p>
+		<p style="font-weight: bold; font-size: 12px">本研究中关于网络购物的定义是：您通过互联网搜索任何无形或有形的商品并最终购买（例如在网上购买一件衣服、在互联网中搜索一个餐厅的评价并前去就餐）。因此，本研究中关于网络购物的金额为您通过互联网搜索任何无形或有形的商品并最终消费的金额。</p>
 	</div>
 
 	<h1>第一部分：基本信息调查</h1>
 	<div id="body">
 		<p>这部分仅用于了解被试者的基本情况，将您所适合的答案打钩，我们对您所填写内容完全保密。（以下内容均为必选）</p>
 	</div>
-	
-	<div id="wrapper">	
-		<div id="content">	
+
+	<div id="wrapper">
+		<div id="content">
 		<?=$errors?>
 		<?=$form?>
 		</div>
 	</div>
-	
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
+
+	<p class="footer">Page rendered in <strong>{elapsed_time}<?php echo($visitor_count); ?></strong> seconds</p>
 </div>
 
 
