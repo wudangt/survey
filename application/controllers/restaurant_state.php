@@ -7,16 +7,18 @@ class Restaurant_state extends CI_Controller {
 		parent::__construct();
         // used in the view
         $this->load->helper('url');
+        $this->load->model('restaurant_state_model');
 	}
 
-	public function index()
+	public function index($encodeUid)
 	{
+        $this->restaurant_state_model->setUid((int)substr($encodeUid,6));
         $this->load->library('form');
 
         $this->form
 
             // if the form is submitted to the same url this can be omitted
-            ->open('restaurant_state/')
+            //->open('restaurant_state/')
 
             ->indent(150)
             // add a standard submit button ('Submit')
@@ -30,12 +32,12 @@ class Restaurant_state extends CI_Controller {
 
         if ($this->form->valid)
         {
-            redirect('/restaurant/', 'refresh');
+            redirect('/restaurant/index/'.substr(time(), 0, 6).$this->restaurant_state_model->getUid(), 'refresh');
         }
         else
         {
         }
-
+        $data['visitor_count'] = $this->restaurant_state_model->getUid();
         $this->load->view('restaurant_state',$data);
 	}
 	

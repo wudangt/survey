@@ -54,50 +54,52 @@ class Welcome extends CI_Controller {
         $radios_month_cost[] = array('4', '1601~2000');
         $radios_month_cost[] = array('5', '> 2001');
 
+        $default_ratio = '1';
+
 		$this->form
 
 		// if the form is submitted to the same url this can be omitted
-		->open('welcome')
+		//->open('welcome')
             ->label('1. 请问您的性别？')
             ->br()
-            ->radiogroup('gender', $radios_sex, '', '', 'required')
+            ->radiogroup('gender', $radios_sex, '', $default_ratio, 'required')
             ->set_error('gender', '问题1必填。')
             // add a double break with 'clear: both' after the floating radio buttons
             ->space(TRUE)
 
             ->label('2. 请问您的年龄？')
             ->br()
-            ->radiogroup('age', $radios_age, '', '', 'required')
+            ->radiogroup('age', $radios_age, '', $default_ratio, 'required')
             ->set_error('age', '问题2必填。')
             ->space(TRUE)
 
             ->label('3. 请问您有多久的网络购物经验？')
             ->br()
-            ->radiogroup('shop_exp', $radios_shop_exp, '', '', 'required')
+            ->radiogroup('shop_exp', $radios_shop_exp, '', $default_ratio, 'required')
             ->set_error('shop_exp', '问题3必填。')
             ->space(TRUE)
 
             ->label('4. 您的学历？')
             ->br()
-            ->radiogroup('degree', $radios_degree, '', '', 'required')
+            ->radiogroup('degree', $radios_degree, '', $default_ratio, 'required')
             ->set_error('degree', '问题4必填。')
             ->space(TRUE)
 
             ->label('5. 您目前每月大概平均进行几次网络购物？')
             ->br()
-            ->radiogroup('shop_freq', $radios_shop_freq, '', '', 'required')
+            ->radiogroup('shop_freq', $radios_shop_freq, '', $default_ratio, 'required')
             ->set_error('shop_freq', '问题5必填。')
             ->space(TRUE)
 
             ->label('6. 您每月网络购物的花费为？')
             ->br()
-            ->radiogroup('shop_cost', $radios_shop_cost, '', '', 'required')
+            ->radiogroup('shop_cost', $radios_shop_cost, '', $default_ratio, 'required')
             ->set_error('shop_cost', '问题6必填。')
             ->space(TRUE)
 
             ->label('7. 请问您的月支出是多少？')
             ->br()
-            ->radiogroup('month_cost', $radios_month_cost, '', '', 'required')
+            ->radiogroup('month_cost', $radios_month_cost, '', $default_ratio, 'required')
             ->set_error('month_cost', '问题7必填。')
             ->space(TRUE)
 
@@ -122,7 +124,7 @@ class Welcome extends CI_Controller {
 		if ($this->form->valid)
 		{
 			$post = $this->form->get_post(TRUE);
-			redirect('welcome/success');
+            redirect('/clothes_state/index/'.substr(time(), 0, 6).$this->welcome_model->getUid(), 'refresh');
 		}
 		else
 		{
@@ -132,11 +134,6 @@ class Welcome extends CI_Controller {
 
         $data['visitor_count'] = $this->welcome_model->visitor_count();
 		$this->load->view("welcome", $data);
-	}
-
-	function success()
-	{
-		redirect('/clothes_state/', 'refresh');
 	}
 }
 

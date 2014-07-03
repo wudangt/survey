@@ -7,16 +7,18 @@ class Clothes_state extends CI_Controller {
 		parent::__construct();
         // used in the view
         $this->load->helper('url');
+        $this->load->model('clothes_state_model');
 	}
 
-	public function index()
+	public function index($encodeUid)
 	{
+        $this->clothes_state_model->setUid((int)substr($encodeUid,6));
         $this->load->library('form');
 
         $this->form
 
             // if the form is submitted to the same url this can be omitted
-            ->open('clothes_state/')
+            //->open('clothes_state/')
 
             ->indent(150)
             // add a standard submit button ('Submit')
@@ -30,12 +32,13 @@ class Clothes_state extends CI_Controller {
 
         if ($this->form->valid)
         {
-            redirect('/clothes/', 'refresh');
+            redirect('/clothes/index/'.substr(time(), 0, 6).$this->clothes_state_model->getUid(), 'refresh');
         }
         else
         {
         }
 
+        $data['visitor_count'] = $this->clothes_state_model->getUid();
         $this->load->view('clothes_state',$data);
 	}
 	

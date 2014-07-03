@@ -8,13 +8,13 @@ class Clothes extends CI_Controller {
         // used in the view
         $this->load->helper('url');
 		$this->load->database();
+        $this->load->model('clothes_model');
 	}
 
-	public function index()
+	public function index($encodeUid)
 	{
+        $this->clothes_model->setUid((int)substr($encodeUid,6));
         $this->load->library('form');
-        $this->load->model('clothes_model');
-        $this->clothes_model->setUid($this->clothes_model->visitor_count());
 
         $radios_sense[] = array('1', '1非常不认同');
         $radios_sense[] = array('2', '2不认同');
@@ -23,12 +23,12 @@ class Clothes extends CI_Controller {
         $radios_sense[] = array('5', '5有一点认同');
         $radios_sense[] = array('6', '6认同');
         $radios_sense[] = array('7', '7非常认同');
-        $default_ratio = '';
+        $default_ratio = '3';
 
         $this->form
 
             // if the form is submitted to the same url this can be omitted
-            ->open('clothes/')
+//            ->open('clothes/')
 
             ->label('1. 网页中的评论显示商家提供的产品或服务不是高质量的')
             ->br()
@@ -313,7 +313,7 @@ class Clothes extends CI_Controller {
         if ($this->form->valid)
         {
             $post = $this->form->get_post(TRUE);
-            redirect('/restaurant_state/', 'refresh');
+            redirect('/restaurant_state/index/'.substr(time(), 0, 6).$this->clothes_model->getUid(), 'refresh');
         }
         else
         {

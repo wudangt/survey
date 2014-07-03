@@ -7,20 +7,16 @@ class Welcome_model extends CI_Model {
         parent::__construct();
     }
 
-    private $visit_count;
+    private $uid;
+    public function setUid($newId) {
+        $this->uid = $newId;
+    }
+    public function getUid() {
+        return $this->uid;
+    }
 
     function visitor_count() {
-        static $isFirst = true;
-        if($isFirst) {
-            $visit_count = $this->db->count_all_results('restaurant_survey') + 1;
-            $isFirst = false;
-        }
-
-        return $visit_count;
-
-//        $this->db->from('investigator');
-//        $this->db->where('uid', 1);
-//        return $this->db->count_all_results();
+        return $this->db->count_all_results('investigator') + 1;
     }
 
     function do_stuff(&$form, $data)
@@ -29,8 +25,9 @@ class Welcome_model extends CI_Model {
         // all validated post values are in $data
         // e.g. $data['username']
         //print_r($data);
+        $this->setUid($this->visitor_count());
 
-        $insert_data['uid'] = $this->visitor_count();
+        $insert_data['uid'] = $this->getUid();
 //        if(array_key_exists('gender', $data))
         $insert_data['gender'] = $data['gender'][0];
         $insert_data['age'] = $data['age'][0];
