@@ -54,7 +54,7 @@ class Welcome extends CI_Controller {
         $radios_month_cost[] = array('4', '1601~2000');
         $radios_month_cost[] = array('5', '> 2001');
 
-        $default_ratio = '1';
+        $default_ratio = '';
 
 		$this->form
 

@@ -23,7 +23,7 @@ class Clothes extends CI_Controller {
         $radios_sense[] = array('5', '5有一点认同');
         $radios_sense[] = array('6', '6认同');
         $radios_sense[] = array('7', '7非常认同');
-        $default_ratio = '3';
+        $default_ratio = '';
 
         $this->form
 
@@ -35,7 +35,7 @@ class Clothes extends CI_Controller {
             ->radiogroup('p_1', $radios_sense, '', $default_ratio, 'required')
             ->set_error('p_1', '问题1必填。')
             ->space(TRUE)
-            ->label('2. 网页中的评论显示该商家提供的产品或服务不是顾客想要的')
+            ->label('2. 网页中的评论显示该商家提供的产品或服务不是你想要的')
             ->br()
             ->radiogroup('p_2', $radios_sense, '', $default_ratio, 'required')
             ->set_error('p_2', '问题2必填。')
@@ -135,7 +135,7 @@ class Clothes extends CI_Controller {
             ->radiogroup('p_21', $radios_sense, '', $default_ratio, 'required')
             ->set_error('p_21', '问题21必填。')
             ->space(TRUE)
-            ->label('22. 总的来说，该商家在服装（餐饮）领域的知识是非常丰富')
+            ->label('22. 总的来说，该商家在服装领域的知识是非常丰富')
             ->br()
             ->radiogroup('p_22', $radios_sense, '', $default_ratio, 'required')
             ->set_error('p_22', '问题22必填。')
