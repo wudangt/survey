@@ -313,7 +313,7 @@ class Clothes extends CI_Controller {
         if ($this->form->valid)
         {
             $post = $this->form->get_post(TRUE);
-            redirect('/restaurant_state/index/'.substr(time(), 0, 6).$this->clothes_model->getUid(), 'refresh');
+            redirect('/restaurant_state/index/'.substr(time(), 4, 10).$this->clothes_model->getUid(), 'refresh');
         }
         else
         {

@@ -85,22 +85,28 @@ class Welcome extends CI_Controller {
             ->set_error('degree', '问题4必填。')
             ->space(TRUE)
 
-            ->label('5. 您目前每月大概平均进行几次网络购物？')
+            ->label('5. 您目前每月大概平均进行几次网络购物？（本研究中关于网络购物的定义是：您通过互联网搜索任何无形或有形的商品并最终购买（例如在网上购买一件衣服、在互联网中搜索一个餐厅的评价并前去就餐）。）')
             ->br()
             ->radiogroup('shop_freq', $radios_shop_freq, '', $default_ratio, 'required')
             ->set_error('shop_freq', '问题5必填。')
             ->space(TRUE)
 
-            ->label('6. 您每月网络购物的花费为？')
+            ->label('6. 您每月网络购物的花费为？（本研究中关于网络购物的金额为您通过互联网搜索任何无形或有形的商品并最终消费的金额。）')
             ->br()
             ->radiogroup('shop_cost', $radios_shop_cost, '', $default_ratio, 'required')
             ->set_error('shop_cost', '问题6必填。')
             ->space(TRUE)
 
-            ->label('7. 请问您的月支出是多少？')
+            ->label('7. 请问您的月总支出是多少？')
             ->br()
             ->radiogroup('month_cost', $radios_month_cost, '', $default_ratio, 'required')
             ->set_error('month_cost', '问题7必填。')
+            ->space(TRUE)
+
+            ->label('8. 请问您的手机号是多少？(抽奖用)')
+            ->br()
+            ->text('phone_num', '', 'required|max_length[11]')
+            ->set_error('phone_num', '问题8必填。')
             ->space(TRUE)
 
             ->indent(150)
@@ -124,7 +130,7 @@ class Welcome extends CI_Controller {
 		if ($this->form->valid)
 		{
 			$post = $this->form->get_post(TRUE);
-            redirect('/clothes_state/index/'.substr(time(), 0, 6).$this->welcome_model->getUid(), 'refresh');
+            redirect('/clothes_state/index/'.substr(time(), 4, 10).$this->welcome_model->getUid(), 'refresh');
 		}
 		else
 		{

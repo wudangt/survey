@@ -32,7 +32,7 @@ class Restaurant_state extends CI_Controller {
 
         if ($this->form->valid)
         {
-            redirect('/restaurant/index/'.substr(time(), 0, 6).$this->restaurant_state_model->getUid(), 'refresh');
+            redirect('/restaurant/index/'.substr(time(), 4, 10).$this->restaurant_state_model->getUid(), 'refresh');
         }
         else
         {

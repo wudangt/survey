@@ -36,6 +36,7 @@ class Welcome_model extends CI_Model {
         $insert_data['shop_freq'] = $data['shop_freq'][0];
         $insert_data['shop_cost'] = $data['shop_cost'][0];
         $insert_data['month_cost'] = $data['month_cost'][0];
+        $insert_data['phone_num'] = $data['phone_num'];
 
         $this->db->from('investigator');
         $this->db->where('uid', $insert_data['uid']);

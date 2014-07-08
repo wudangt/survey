@@ -32,7 +32,7 @@ class Clothes_state extends CI_Controller {
 
         if ($this->form->valid)
         {
-            redirect('/clothes/index/'.substr(time(), 0, 6).$this->clothes_state_model->getUid(), 'refresh');
+            redirect('/clothes/index/'.substr(time(), 4, 10).$this->clothes_state_model->getUid(), 'refresh');
         }
         else
         {
