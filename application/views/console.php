@@ -114,17 +114,19 @@
         <p>有效问卷uid为：<?php foreach($valid_uid as $item) { echo $item->uid.','; }?>
         </p>
 
-        <table class="table table-striped table-hover" style="width:200px; margin-left: 100px">
+        <table class="table table-striped table-hover" style="width:200px; margin:auto">
             <tbody>
 
-            <?php foreach($all_uid as $item) {?>
+            <?php for($i =0; $i<count($all_uid); $i= $i+5) {?>
                 <tr>
+				<?php for($j =0; $i+$j <count($all_uid) &&$j<5; $j= $j+1) {?>
                     <td style="vertical-align:middle">
-                        <div><?php echo $item->uid; ?></div>
+                        <div><?php echo $all_uid[$i+$j]->uid; ?></div>
                     </td>
                     <td style="vertical-align:middle">
-                        <div><?php echo $item->phone_num; ?></div>
+                        <div><?php echo $all_uid[$i+$j]->phone_num; ?></div>
                     </td>
+					<?php }?>
                 </tr>
             <?php }?>
             </tbody>
