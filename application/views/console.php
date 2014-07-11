@@ -103,17 +103,12 @@
 
 </script>
 
-<<<<<<< HEAD
 <div id="container" style="text-align: left; margin:auto">
-=======
-<div id="container" style="text-align: center">
->>>>>>> df7dae3a86773755b446a5e076517c8ce3bea721
 	<h1>目前调查问卷统计数据</h1>
 
 	<div id="body">
         <p>截至目前：</p>
         <p>问卷总填写数量：<?php echo($all_visit); ?></p>
-<<<<<<< HEAD
 
         <p>clothes有效问卷数量：<?php echo($cloth_visit); ?></p>
         <p>clothes有效问卷uid为：<?php foreach($cloth_uid as $item) echo $item->uid."\t";?></p>
@@ -126,14 +121,6 @@
 
 
 	<table class="table table-striped table-hover" style="width:200px; margin:auto">
-=======
-        <p>有效问卷数量：<?php echo($valid_visit); ?></p>
-
-        <p>有效问卷uid为：<?php foreach($valid_uid as $item) { echo $item->uid.','; }?>
-        </p>
-
-        <table class="table table-striped table-hover" style="width:200px; margin:auto">
->>>>>>> df7dae3a86773755b446a5e076517c8ce3bea721
             <tbody>
 
             <?php for($i =0; $i<count($all_uid); $i= $i+5) {?>
@@ -155,12 +142,5 @@
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 </div>
 
-<<<<<<< HEAD
 </body>
 </html>
-=======
-
-
-</body>
-</html>
->>>>>>> df7dae3a86773755b446a5e076517c8ce3bea721

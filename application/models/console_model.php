@@ -11,12 +11,9 @@ class Console_model extends CI_Model {
         return $this->db->count_all_results('investigator');
     }
 
-<<<<<<< HEAD
     function cloth_visit() {
         return $this->db->count_all_results('clothes_survey');
     }
-=======
->>>>>>> df7dae3a86773755b446a5e076517c8ce3bea721
     function valid_visit() {
         return $this->db->count_all_results('restaurant_survey');
     }
@@ -30,7 +27,6 @@ class Console_model extends CI_Model {
         return $ret;
     }
 
-<<<<<<< HEAD
     function query_cloth_visit() {
         $query = "SELECT uid
                   FROM clothes_survey;";
@@ -40,8 +36,6 @@ class Console_model extends CI_Model {
         return $ret;
     }
 
-=======
->>>>>>> df7dae3a86773755b446a5e076517c8ce3bea721
     function query_valid_visit() {
         $query = "SELECT uid
                   FROM restaurant_survey;";
@@ -53,8 +47,4 @@ class Console_model extends CI_Model {
 }
 
 /* End of file Example.php */
-<<<<<<< HEAD
 /* Location: /application/models/Example.php */
-=======
-/* Location: /application/models/Example.php */
->>>>>>> df7dae3a86773755b446a5e076517c8ce3bea721
