@@ -16,12 +16,18 @@ class Console extends CI_Controller {
 	{
         $data['all_visit'] = $this->console_model->all_visit();
         $data['valid_visit'] = $this->console_model->valid_visit();
+<<<<<<< HEAD
 	$data['cloth_visit'] = $this->console_model->cloth_visit();
 
         $result = $this->console_model->query_valid_visit();
         $data['valid_uid'] = $result['valid_uid'];
         $result = $this->console_model->query_cloth_visit();
         $data['cloth_uid'] = $result['cloth_uid'];
+=======
+
+        $result = $this->console_model->query_valid_visit();
+        $data['valid_uid'] = $result['valid_uid'];
+>>>>>>> df7dae3a86773755b446a5e076517c8ce3bea721
         $result = $this->console_model->query_all_visit();
         $data['all_uid'] = $result['all_uid'];
 
@@ -30,4 +36,8 @@ class Console extends CI_Controller {
 }
 
 /* End of file welcome_2.php */
+<<<<<<< HEAD
 /* Location: ./application/controllers/welcome_2.php */
+=======
+/* Location: ./application/controllers/welcome_2.php */
+>>>>>>> df7dae3a86773755b446a5e076517c8ce3bea721
