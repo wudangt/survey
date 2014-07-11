@@ -106,6 +106,17 @@
 </div>
 
 
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4079117029926365";
+/* footer_ad */
+google_ad_slot = "4435673085";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
 
 </body>
 </html>

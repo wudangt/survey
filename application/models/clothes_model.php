@@ -17,7 +17,7 @@ class Clothes_model extends CI_Model {
                   SELECT `comment`, fankui, hangshu, date, color, size, height, weight, reviewer
                   FROM
                   clothes_negative
-                  WHERE zubie%105 = $this->uid
+                  WHERE zubie = $this->uid%105
                   ORDER BY hangshu ASC ;";
         $q = $this->db->query($query);
         $ret['comments'] = $q->result();
