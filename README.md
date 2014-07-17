@@ -6,5 +6,5 @@ A survey system wrote in php and based on framework CodeIgniter and BootStrap
 Backstage：CodeIgniter (http://codeigniter.org.cn/user_guide/index.html)  
 Front：BootStrap (http://www.bootcss.com/)  
 
-Demo Address：http://survey.imsheridan.com
+Demo Address：http://survey.imsheridan.com  
 欢迎填写！
