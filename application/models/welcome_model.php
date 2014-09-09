@@ -5,6 +5,7 @@ class Welcome_model extends CI_Model {
     function __construct()
     {
         parent::__construct();
+	$this->load->database();
     }
 
     private $uid;
@@ -20,10 +21,10 @@ class Welcome_model extends CI_Model {
     }
 
     function query_uid($phone) {
-        $query = $this->db->query('SELECT uid FROM inveJoinCloth WHERE phone_num = '.$phone);
+        $query = $this->db->query('SELECT uid FROM invejoincloth WHERE phone_num = '.$phone.' LIMIT 1');
         //print_r($query->result()[0]->uid);
         if($query->num_rows() > 0) {
-            return $query->result()[0]->uid;
+            return $query->row()->uid;
         }else {
             return $this->visitor_count() + 210;    //防止覆盖之前包含手机号的填写者，加了一个%21=0的整数
         }
