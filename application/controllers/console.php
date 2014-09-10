@@ -15,16 +15,10 @@ class Console extends CI_Controller {
 	public function index()
 	{
         $data['all_visit'] = $this->console_model->all_visit();
-        $data['valid_visit'] = $this->console_model->valid_visit();
-	$data['cloth_visit'] = $this->console_model->cloth_visit();
+		$data['cloth_visit'] = $this->console_model->cloth_visit();
 
-        $result = $this->console_model->query_valid_visit();
-        $data['valid_uid'] = $result['valid_uid'];
         $result = $this->console_model->query_cloth_visit();
         $data['cloth_uid'] = $result['cloth_uid'];
-
-        $result = $this->console_model->query_valid_visit();
-        $data['valid_uid'] = $result['valid_uid'];
         $result = $this->console_model->query_all_visit();
         $data['all_uid'] = $result['all_uid'];
 

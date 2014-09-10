@@ -22,8 +22,7 @@ class Welcome extends CI_Controller {
 
 		// if the form is submitted to the same url this can be omitted
 		//->open('welcome')
-            ->label('1. 请问您的手机号是多少？')
-            ->br()
+            ->label('1. 请输入您上次填写的手机号：')
             ->text('phone_num', '', 'required|max_length[11]')
             ->set_error('phone_num', '问题1必填。')
             ->space(TRUE)

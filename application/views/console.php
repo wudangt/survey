@@ -112,12 +112,6 @@
 
         <p>clothes有效问卷数量：<?php echo($cloth_visit); ?></p>
         <p>clothes有效问卷uid为：<?php foreach($cloth_uid as $item) echo $item->uid."\t";?></p>
-        
-	<p>restaurant有效问卷数量：<?php echo($valid_visit); ?></p>
-        <p>restaurant有效问卷uid为：<?php foreach($valid_uid as $item) echo $item->uid."\t";?></p>
-	<!--<p><?php for($i=1;$i<=count($valid_uid);$i++) { echo $valid_uid[$i-1]->uid."\t"; if($i%40 ==0) echo '</p><p>'; }?>
-        -->
-	</p>
 
 
 	<table class="table table-striped table-hover" style="width:200px; margin:auto">

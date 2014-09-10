@@ -23,7 +23,7 @@ class Clothes extends CI_Controller {
         $radios_sense[] = array('5', '5有一点认同');
         $radios_sense[] = array('6', '6认同');
         $radios_sense[] = array('7', '7非常认同');
-        $default_ratio = '2';
+        $default_ratio = '';
 
         $this->form
 
