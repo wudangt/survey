@@ -152,7 +152,11 @@
                             <?php for($i = 0; $i <= 9; $i++){ $item = $comments[$i];?>
                                 <tr>
                                     <td class="tm-col-master" style="vertical-align:middle; width:550px;">
+										<?php if($i == 1||$i == 5) {?>
+											<div class="tm-rate-content"><div style="color: green;"><?php echo $item->comment; ?></div></div>
+										<?php } else { ?>
                                         <div class="tm-rate-content"><div class="tm-rate-fulltxt"><?php echo $item->comment; ?></div></div>
+										<?php } ?>
                                         <div class="tm-rate-date"><?php echo $item->date; if($i == 9) {?>
                                             <div style="font-weight:bold; color: red;">END</div><?php }?>
                                          </div>
