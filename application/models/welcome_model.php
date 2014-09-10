@@ -26,8 +26,15 @@ class Welcome_model extends CI_Model {
         if($query->num_rows() > 0) {
             return $query->row()->uid;
         }else {
-            return $this->visitor_count() + 210;    //防止覆盖之前包含手机号的填写者，加了一个%21=0的整数
-        }
+			$max_query = $this->db->query('SELECT uid FROM clothes_survey_v2 ORDER BY uid DESC LIMIT 1');
+			if($max_query->num_rows() > 0) {
+				$max_uid = $max_query->row()->uid;
+				return $max_uid > 210 ? $max_uid+1 : 211;    //防止覆盖之前包含手机号的填写者，加了一个%21=0的整数
+			}else{
+				return 211;
+			}
+			
+		}
     }
 
     function do_stuff(&$form, $data)

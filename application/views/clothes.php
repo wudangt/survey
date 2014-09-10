@@ -153,7 +153,7 @@
                                 <tr>
                                     <td class="tm-col-master" style="vertical-align:middle; width:550px;">
 										<?php if($i == 1||$i == 5) {?>
-											<div class="tm-rate-content"><div style="color: green;"><?php echo $item->comment; ?></div></div>
+											<div class="tm-rate-content"><div style="font-weight:bold;"><?php echo $item->comment; ?></div></div>
 										<?php } else { ?>
                                         <div class="tm-rate-content"><div class="tm-rate-fulltxt"><?php echo $item->comment; ?></div></div>
 										<?php } ?>
