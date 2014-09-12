@@ -111,6 +111,7 @@
         <p>问卷总填写数量：<?php echo($all_visit); ?></p>
 
         <p>clothes有效问卷数量：<?php echo($cloth_visit); ?></p>
+        <p>clothes问卷return user数量：<?php echo($return_visit); ?></p>
         <p>clothes有效问卷uid为：<?php foreach($cloth_uid as $item) echo $item->uid."\t";?></p>
 
 

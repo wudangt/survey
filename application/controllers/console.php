@@ -16,6 +16,7 @@ class Console extends CI_Controller {
 	{
         $data['all_visit'] = $this->console_model->all_visit();
 		$data['cloth_visit'] = $this->console_model->cloth_visit();
+        $data['return_visit'] = $this->console_model->return_visit();
 
         $result = $this->console_model->query_cloth_visit();
         $data['cloth_uid'] = $result['cloth_uid'];
