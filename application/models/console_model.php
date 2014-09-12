@@ -16,7 +16,7 @@ class Console_model extends CI_Model {
     }
 
     function return_visit() {
-        $query = $this->db->query('SELECT uid FROM clothes_survey_v2 WHERE uid > 200');
+        $query = $this->db->query('SELECT uid FROM clothes_survey_v2 WHERE uid < 200');
         //print_r($query->result()[0]->uid);
         return $query->num_rows();
     }
